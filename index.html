@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laundry 24 - ชำระเงิน</title>
+    <title>Laundry 24 - Checkout</title>
     <style>
         body { font-family: Tahoma, sans-serif; background: #f5f5f5; padding: 20px; max-width: 600px; margin: auto; }
         .card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 15px; }
         .price { font-size: 28px; color: #00b300; font-weight: bold; }
-        .btn { display: block; background: #00b300; color: #fff; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; margin-top: 20px; }
+        .btn { display: block; background: #00b300; color: #fff; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 18px; margin-top: 20px; border: none; cursor: pointer;}
         .policy-box { background: #FFF9E6; padding: 12px; border-radius: 8px; font-size: 13px; color: #555; margin-top: 15px; border-left: 4px solid #FFE000; }
         .contact { font-size: 12px; color: #666; margin-top: 15px; }
+        h3 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .form-group { margin-bottom: 15px; }
+        label { font-weight: bold; display: block; margin-bottom: 5px;}
+        input[type="text"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;}
     </style>
 </head>
 <body>
@@ -18,21 +22,36 @@
         <h2>🧺 ซักผ้าหยอดเหรียญ LAUNDRY 24</h2>
         <p><strong>บริการ:</strong> ซักผ้า (1 เครื่อง)</p>
         <p class="price">40 บาท</p>
-        <p>📍 146/1 ซอยประชาอุทิศ 76 ถนน ประชาอุทิศ เขตทุ่งครุ แขวง ทุ่งครุ กทม.</p>
+        <p>📍 146/1 ซอยประชาอุทิศ 76 เขตทุ่งครุ กทม.</p>
+        <p>📞 085-199-2242 | ✉️ kowit252325@gmail.com</p>
     </div>
 
     <div class="card">
-        <h3>📋 นโยบายการคืนเงิน</h3>
-        <div class="policy-box">
-            บริการซักผ้าเป็นบริการชำระเงินครั้งเดียว หลังจากเครื่องเริ่มทำงานแล้วไม่สามารถยกเลิกได้ <strong>โดยหลักการแล้วไม่สนับสนุนการคืนเงิน</strong> อย่างไรก็ตาม หากเครื่องขัดข้องเนื่องจากความผิดของเรา กรุณาติดต่อเจ้าหน้าที่ภายใน 24 ชั่วโมง เราจะคืนเงินเต็มจำนวนผ่านช่องทางเดิม
+        <h3>🛒 ตะกร้าสินค้า / ชำระเงิน (Checkout)</h3>
+        
+        <div class="form-group">
+            <label>ระบุหมายเลขเครื่อง:</label>
+            <input type="text" placeholder="เช่น WASH-01" value="WASH-01">
         </div>
-        <p style="font-size: 13px;">☑️ ฉันได้อ่านและยอมรับนโยบายการคืนเงินแล้ว</p>
-        <a href="https://webhook.laundry24.online/pay" class="btn">💳 ดำเนินการชำระเงิน (40 บาท)</a>
+
+        <p><strong>รายการ:</strong> บริการซักผ้า 1 ครั้ง</p>
+        <p><strong>ยอดรวม:</strong> 40.00 บาท</p>
+        
+        <p style="margin-top: 20px;"><strong>วิธีการชำระเงิน:</strong></p>
+        <p>ลูกค้าสามารถชำระเงินได้โดยการสแกน QR Code (PromptPay) ผ่านหน้าเว็บไซต์นี้ ระบบจะทำการยืนยันยอดเงินและสั่งเปิดเครื่องซักผ้าอัตโนมัติ</p>
+
+        <div class="policy-box">
+            <strong>นโยบายการคืนเงิน:</strong> บริการซักผ้าเป็นบริการชำระเงินครั้งเดียว หลังจากเครื่องเริ่มทำงานแล้วไม่สามารถยกเลิกได้ <strong>โดยหลักการแล้วไม่สนับสนุนการคืนเงิน</strong> อย่างไรก็ตาม หากเครื่องขัดข้องเนื่องจากความผิดของเรา กรุณาติดต่อเจ้าหน้าที่ภายใน 24 ชั่วโมง เราจะคืนเงินเต็มจำนวนผ่านช่องทางเดิม<br><br>
+            <strong>นโยบายการจัดส่ง:</strong> บริการนี้เป็นบริการ ณ สถานที่ (On-site service) ไม่มีบริการจัดส่งสินค้า
+        </div>
+        
+        <label style="font-weight: normal; font-size: 14px; margin-top: 10px;"><input type="checkbox" required> ฉันได้อ่านและยอมรับนโยบายการคืนเงินแล้ว</label>
+        
+        <button class="btn" onclick="alert('ในโหมดจริง ปุ่มนี้จะพาไปสแกน QR Code จ่ายเงินครับ')">💳 ดำเนินการชำระเงิน (40 บาท)</button>
     </div>
 
     <div class="contact">
-        <p>ติดต่อ: kowit252325@gmail.com | 085-199-2242</p>
-        <p><a href="privacy.pdf">นโยบายความเป็นส่วนตัว (PDF)</a></p>
+        <p><a href="privacy.pdf">อ่านนโยบายความเป็นส่วนตัว (PDF)</a></p>
     </div>
 </body>
 </html>
